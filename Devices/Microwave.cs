@@ -8,10 +8,9 @@ namespace SmartHouse2
     public class Microwave : Device
     {
         private EModeMicrowave mode;
-        public Microwave (bool state, EModeMicrowave mode)
-            :base("Микроволновка", state)
+        public Microwave(bool state, EModeMicrowave mode)
+            :base(state)
         {
-            this.State = state;
             this.mode = mode;
         }
         public void SetPowerDefrost()

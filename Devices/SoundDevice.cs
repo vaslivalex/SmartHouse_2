@@ -8,9 +8,10 @@ namespace SmartHouse2
     public abstract class SoundDevice : Device
     {
         protected ESound soundLevel;
-        public SoundDevice(string name, bool state)
-            : base(name, state)
+        public SoundDevice(bool state, ESound soundLvl)
+            : base(state)
         {
+            soundLevel = soundLvl;
         }
         public void SetLevelSoundMute()
         {

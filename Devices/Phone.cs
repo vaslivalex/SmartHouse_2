@@ -9,9 +9,8 @@ namespace SmartHouse2
     {
         public ESound ringtonVolume;
         public Phone(bool state, ESound ringtonVolume)
-            : base("Телефон", state)
+            : base(state, ESound.Min)
         {
-            this.State = state;
             this.ringtonVolume = ringtonVolume;
         }
 

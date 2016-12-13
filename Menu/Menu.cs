@@ -11,22 +11,22 @@ namespace SmartHouse2
         public void Show()
         {
             Dictionary<string, Device> MyDevice = new Dictionary<string, Device>();
-            MyDevice.Add("Lamp1", new Lamp(true, EColour.Red));
-            MyDevice.Add("TV1", new TV(true, ESound.Min));
-            MyDevice.Add("Phone1", new TV(true, ESound.Max));
-            //MyDevice.Add("TV1", new TV(true, ESound.Min, 1));
-            MyDevice.Add("Microwave1", new Microwave(true, EModeMicrowave.Defrost));
+            MyDevice.Add("Лампа", new Lamp(true, EColour.Red));
+            MyDevice.Add("Телевизор", new TV(true, ESound.Middle));
+            MyDevice.Add("Телефон", new TV(true, ESound.Max));
+            MyDevice.Add("Микроволновка", new Microwave(true, EModeMicrowave.Defrost));
 
             while (true)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Название устройства: ");
-                foreach (var dev in MyDevice)
+                foreach (KeyValuePair<string, Device> dev in MyDevice)
                 {
-                    Console.Write(new String(' ', 10));
+                    Console.Write(new String(' ', 5));
                     Console.ResetColor();
-                    Console.WriteLine(dev.Key + ", " + dev.Value.ToString());
+                    Console.WriteLine("{0,-15} {1,5}", dev.Key, dev.Value.ToString());
+
                 }
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -65,11 +65,6 @@ namespace SmartHouse2
                         MyDevice.Add(commands[2], new Phone(true, ESound.Min));
                         continue;
                     }
-                    //else if (commands[1] == "TV")
-                    //{
-                    //    MyDevice.Add(commands[2], new TV(true, ESound.Min, 1));
-                    //    continue;
-                    //}
                     else
                     {
                         Console.WriteLine("\nНеизвестное устройство\nДля продолжение нажмите любую клавишу.");
