@@ -7,7 +7,7 @@ namespace SmartHouse2
 {
     public class Phone:SoundDevice
     {
-        public ESound ringtonVolume;
+        private ESound ringtonVolume;
         public Phone(bool state, ESound ringtonVolume)
             : base(state, ESound.Min)
         {
