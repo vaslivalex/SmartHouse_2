@@ -13,7 +13,7 @@ namespace SmartHouse2
             Dictionary<string, Device> MyDevice = new Dictionary<string, Device>();
             MyDevice.Add("Лампа", new Lamp(true, EColour.Red));
             MyDevice.Add("Телевизор", new TV(true, ESound.Middle));
-            MyDevice.Add("Телефон", new TV(true, ESound.Max));
+            MyDevice.Add("Телефон", new Phone(true, ESound.Max, EBright.Low));
             MyDevice.Add("Микроволновка", new Microwave(true, EModeMicrowave.Defrost));
 
             while (true)
@@ -62,7 +62,7 @@ namespace SmartHouse2
                     }
                     else if (commands[1] == "Phone")
                     {
-                        MyDevice.Add(commands[2], new Phone(true, ESound.Min));
+                        MyDevice.Add(commands[2], new Phone(true, ESound.Min, EBright.Low));
                         continue;
                     }
                     else

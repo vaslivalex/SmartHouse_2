@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\EBright.cs" />
     <Compile Include="Enums\ESound.cs" />
     <Compile Include="Enums\EPower.cs" />
     <Compile Include="Devices\Phone.cs" />

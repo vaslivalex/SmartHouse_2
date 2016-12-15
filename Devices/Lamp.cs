@@ -8,10 +8,10 @@ namespace SmartHouse2
     public class Lamp : Device
     {
         private EColour colour;
-        public Lamp(bool state, EColour color)
+        public Lamp(bool state, EColour colour)
             : base(state)
         {
-            this.colour = color;
+            this.colour = colour;
         }
         public void SetRedColor()
         {
