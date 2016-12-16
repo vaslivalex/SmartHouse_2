@@ -41,6 +41,7 @@ namespace SmartHouse2
                 state = "выключен";
             }
 
+            //string sLevel = ESound2String(soundLevel);
             string sLevel;
             if (soundLevel == ESound.Mute)
             {
@@ -57,8 +58,30 @@ namespace SmartHouse2
             else
             {
                 sLevel = "максимальный";
-            }
-            return "Состояние: " + state + ", уровень громкости: " + sLevel;
+            } 
+            return string.Format("Состояние: {0}, уровень громкости: {1}", state, sLevel);
         }
+
+        //public string ESound2String(ESound eSound)
+        //{
+        //    if (!Enum.IsDefined(typeof(ESound), eSound))
+        //    {
+        //        return string.Empty;
+        //    }
+
+        //    switch (eSound)
+        //    {
+        //        case ESound.Mute:
+        //            return "беззвучный режим";
+        //        case ESound.Min:
+        //            return "минимальный";
+        //        case ESound.Middle:
+        //            return "cредний";
+        //        case ESound.Max:
+        //            return "максимальный";
+        //        default:
+        //            return string.Empty;
+        //    }
+        //}
     }
 }

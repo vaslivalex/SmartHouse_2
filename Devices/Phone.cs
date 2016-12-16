@@ -32,16 +32,7 @@ namespace SmartHouse2
         }
         public override string ToString()
         {
-            string state;
-            if (this.State)
-            {
-                state = "включен";
-            }
-            else
-            {
-                state = "выключен";
-            }
-
+            string baseToString = base.ToString();
             string brightScreenLevel;
             if (brightScreen == EBright.Off)
             {
@@ -59,24 +50,7 @@ namespace SmartHouse2
             {
                 brightScreenLevel = "максимальная";
             }
-            string sLevel;
-            if (soundLevel == ESound.Mute)
-            {
-                sLevel = "беззвучный режим";
-            }
-            else if (soundLevel == ESound.Min)
-            {
-                sLevel = "минимальный";
-            }
-            else if (soundLevel == ESound.Middle)
-            {
-                sLevel = "cредний";
-            }
-            else
-            {
-                sLevel = "максимальный";
-            }
-            return "Состояние: " + state + ", " + "подсветка экрана: " + brightScreenLevel + ", уровень громкости: " + sLevel;
+            return string.Format(string.Format("{0}, подсветка экрана: {1}", baseToString, brightScreenLevel));
         }
     }
 }

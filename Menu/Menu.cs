@@ -95,14 +95,6 @@ namespace SmartHouse2
                     case "off":
                         MyDevice[commands[2]].Off();
                         break;
-                    //case "set":
-                    //    byte number;
-                    //    bool result = byte.TryParse(Console.ReadLine(), out number);
-                    //    if (result)
-                    //    {
-                    //        ((TV)MyDevice[commands[2]]).SetChanel(number);
-                    //    }
-                        //break;
                     case "red":
                         if (MyDevice[commands[2]] is Lamp)
                         {
@@ -136,10 +128,6 @@ namespace SmartHouse2
                         {
                             ((TV)MyDevice[commands[2]]).SetLevelSoundMin();
                         }
-                        else if (MyDevice[commands[2]] is Phone)
-                        {
-                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMin();
-                        }
                         break;
                     case "middle":
                         if (MyDevice[commands[2]] is Microwave)
@@ -149,10 +137,6 @@ namespace SmartHouse2
                         else if (MyDevice[commands[2]] is TV)
                         {
                             ((TV)MyDevice[commands[2]]).SetLevelSoundMiddle();
-                        }
-                        else if (MyDevice[commands[2]] is Phone)
-                        {
-                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMin();
                         }
                         break;
                     case "max":
@@ -164,19 +148,69 @@ namespace SmartHouse2
                         {
                             ((TV)MyDevice[commands[2]]).SetLevelSoundMax();
                         }
-                        else if (MyDevice[commands[2]] is Phone)
-                        {
-                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMin();
-                        }
                         break;
-                    case "mute":
+                    case "smute":
                         if (MyDevice[commands[2]] is TV)
                         {
                             ((TV)MyDevice[commands[2]]).SetLevelSoundMute();
                         }
                         else if (MyDevice[commands[2]] is Phone)
                         {
+                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMute();
+                        }
+                        break;
+                    case "smin":
+                        if (MyDevice[commands[2]] is TV)
+                        {
+                            ((TV)MyDevice[commands[2]]).SetLevelSoundMin();
+                        }
+                        else if (MyDevice[commands[2]] is Phone)
+                        {
                             ((Phone)MyDevice[commands[2]]).SetLevelSoundMin();
+                        }
+                        break;
+                    case "smiddle":
+                        if (MyDevice[commands[2]] is TV)
+                        {
+                            ((TV)MyDevice[commands[2]]).SetLevelSoundMiddle();
+                        }
+                        else if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMiddle();
+                        }
+                        break;
+                    case "smax":
+                        if (MyDevice[commands[2]] is TV)
+                        {
+                            ((TV)MyDevice[commands[2]]).SetLevelSoundMax();
+                        }
+                        else if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelSoundMax();
+                        }
+                        break;
+                    case "broff":
+                        if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelBrightScreenOff();
+                        }
+                        break;
+                    case "brmin":
+                        if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelBrightScreenLow();
+                        }
+                        break;
+                    case "brmiddle":
+                        if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelBrightScreenMiddle();
+                        }
+                        break;
+                    case "brmax":
+                        if (MyDevice[commands[2]] is Phone)
+                        {
+                            ((Phone)MyDevice[commands[2]]).SetLevelBrightScreenMax();
                         }
                         break;
                     default:
@@ -220,10 +254,10 @@ namespace SmartHouse2
             Console.WriteLine("\tdel TV nameTV");
             Console.WriteLine("\ton TV nameTV");
             Console.WriteLine("\toff TV nameTV");
-            Console.WriteLine("\tmute TV nameTV");
-            Console.WriteLine("\tmin TV nameTV");
-            Console.WriteLine("\tmiddle TV nameTV");
-            Console.WriteLine("\tmax TV nameTV");
+            Console.WriteLine("\tsmute TV nameTV");
+            Console.WriteLine("\tsmin TV nameTV");
+            Console.WriteLine("\tsmiddle TV nameTV");
+            Console.WriteLine("\tsmax TV nameTV");
             Console.WriteLine(" ");
 
             Console.WriteLine(new String('-', 40));
@@ -233,10 +267,15 @@ namespace SmartHouse2
             Console.WriteLine("\tdel Phone namePhone");
             Console.WriteLine("\ton Phone namePhone");
             Console.WriteLine("\toff Phone namePhone");
-            Console.WriteLine("\tmute Phone namePhone");
-            Console.WriteLine("\tmin Phone namePhone");
-            Console.WriteLine("\tmiddle Phone namePhone");
-            Console.WriteLine("\tmax Phone namePhone");
+            Console.WriteLine("\tsmute Phone namePhone");
+            Console.WriteLine("\tsmin Phone namePhone");
+            Console.WriteLine("\tsmiddle Phone namePhone");
+            Console.WriteLine("\tsmax Phone namePhone");
+            Console.WriteLine("\tbroff Phone namePhone");
+            Console.WriteLine("\tbrmin Phone namePhone");
+            Console.WriteLine("\tbrmiddle Phone namePhone");
+            Console.WriteLine("\tbrmax Phone namePhone");
+
             Console.WriteLine(" ");
 
             Console.WriteLine(new String('-', 40));

@@ -49,7 +49,7 @@ namespace SmartHouse2
             {
                 colour = "синий";
             }
-            return "Состояние: " + state + ", цвет: " + colour;
+            return string.Format("Состояние: {0}, цвет: {1}", state, colour);
         }
     }
 }
